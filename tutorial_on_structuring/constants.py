@@ -1,0 +1,2 @@
+START = 1
+FINISH = 100

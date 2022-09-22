@@ -1,0 +1,15 @@
+# we cannot use runserver for production, maybe use gunicorn
+version: "3"
+services:
+# mount database data from host to container
+  db:
+    image: postgres:13.8-alpine
+    ports:
+      - "5432:5432"
+    env_file:
+      - ./.env
+    volumes:
+      - postgres-db:/var/lib/postgresql/data
+
+volumes:
+  postgres-db:
