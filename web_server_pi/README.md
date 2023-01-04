@@ -34,6 +34,8 @@ create database test;
 
 ## Django
 
+python manage.py runserver
+
 ### Set up
 Anytime you update the model, we need to migrate
 python manage.py makemigrations

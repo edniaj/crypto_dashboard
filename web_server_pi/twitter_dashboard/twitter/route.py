@@ -188,15 +188,17 @@ def post_check_stalker_following(req):
                 new_following_username = new_following.get('username')
                 new_following_url = new_following.get('url', None)
                 new_following_follower_count = new_following.get('public_metrics')['followers_count']
+                new_following_account_created = new_following.get('created_at')[:10]
+                new_following_description = new_following.get('description')
                 
                 if new_following_follower_count < 500:
                     new_following_follower_count_tag = '🔴'
                 elif new_following_follower_count < 5000:
                     new_following_follower_count_tag = '🟡'
-                else:
+                else: 
                     new_following_follower_count_tag = '🟢'
 
-                message = f'@{stalker_name} has followed https://twitter.com/{new_following_username}\nFollower : {new_following_follower_count} {new_following_follower_count_tag}  \ Website: {new_following_url}'
+                message = f'@{stalker_name} has followed https://twitter.com/{new_following_username}\nFollower : {new_following_follower_count} {new_following_follower_count_tag}  \ Website: {new_following_url}\nCreation: {new_following_account_created}\n\nDescription : {new_following_description}'
                 telegram_bot.send_telegram_message(message)
 
         # @20/9/2022 JD User might have already been registered. We still want to add into the logsheet. 
