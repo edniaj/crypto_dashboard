@@ -180,6 +180,7 @@ class Twitter_Bot(Database_Controller, Telegram_bot):
                             print('attempt # ',attempt_number, ' on ', 'funnyGuyLarry (admin)')
                         else:
                             print('attempt # ',attempt_number, ' on ',stalker_id)
+                        # remember to change back to 20
                         recent_20_following = self.user_lookup_following(stalker_id, 20)
                         #test
                         # recent_20_following = mock_data.recent_20_following

@@ -1,4 +1,4 @@
-interface ITwitterUser {
+export interface ITwitterUser {
     name_alias: string,
     username: string,
     stalk_user: boolean,

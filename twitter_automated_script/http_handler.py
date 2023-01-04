@@ -23,5 +23,4 @@ class Http_Handler():
         headers={'Authorization': f'Bearer {cls.bearer_token}'}
         post_request = requests.post(f'{cls.base_url}{route}', headers=headers, **kwargs)
         return cls.handle_res(cls, post_request)
-    
-     
+
